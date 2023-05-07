@@ -37,4 +37,18 @@ Choose the number of components you want to reduce the dataset to (e.g., 2).
 # Apply PCA
 n_components = 2
 pca = PCA(n_components=n_components)
-principal_components = pca.fit_transform(scaled_data
+principal_components = pca.fit_transform(scaled_data)
+
+ #XGBoost
+model = xgb.XGBClassifier(use_label_encoder=False, eval_metric='logloss')
+model.fit(X_train, y_train)
+
+# Make predictions on the testing set
+y_pred = model.predict(X_test)
+
+# Calculate the macro F1 score
+macro_f1 = f1_score(y_test, y_pred, average='macro')
+print('Macro F1 Score:', macro_f1)
+                                         
+                                         
+           
