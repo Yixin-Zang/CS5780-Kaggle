@@ -49,6 +49,13 @@ y_pred = model.predict(X_test)
 # Calculate the macro F1 score
 macro_f1 = f1_score(y_test, y_pred, average='macro')
 print('Macro F1 Score:', macro_f1)
+
+
+import xgboost as xgb
+import numpy as np
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import f1_score
                                          
                                          
            
